@@ -12,10 +12,9 @@ Simple UI: Clean, centered layout with color-coded feedback (red for errors, gre
 How to Run
 
 Clone the Repository:
-git clone https://github.com/your-username/Password-Validation.git
-cd Password-Validation
+git clone https://github.com/johnkoshy/Password-Validation-Website.git
+cd Password-Validation-Website
 
-Replace your-username with your GitHub username.
 
 Open the Webpage:
 
@@ -52,6 +51,26 @@ Setup (Optional)
 
 Live Server: Install the "Live Server" extension in VS Code for real-time previews.
 Favicon: Replace favicon.ico with your own icon (16x16 or 32x32, .ico or .png) and update the <link> tag in index.html if needed.
+
+Screenshots
+
+(Optional) Add a screenshot of the webpage to showcase the form. To include:
+
+
+
+
+
+Take a screenshot of the webpage (e.g., via browser or PrtSc).
+
+
+
+Save it as screenshot.png in the project folder.
+
+
+
+Add to the README:
+
+![Password Validation Screenshot](screenshot.png)
 
 Future Improvements
 
