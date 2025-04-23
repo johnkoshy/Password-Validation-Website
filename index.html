@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Password Validation Website</title>
     <link rel="icon" type="image/x-icon" href="authorization.png">
@@ -22,14 +21,34 @@
             margin: 10px 0;
         }
         form {
-            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for form */
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
             display: inline-block;
         }
+        #strength-meter {
+            height: 10px;
+            width: 200px;
+            background-color: #ddd;
+            margin: 10px auto;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        #strength-bar {
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease, background-color 0.3s ease;
+        }
+        #strength-text {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .weak { background-color: red; }
+        .fair { background-color: orange; }
+        .good { background-color: yellowgreen; }
+        .strong { background-color: green; }
     </style>
 </head>
-
 <body>
     <h1>Password Validation</h1>
 
@@ -77,14 +96,65 @@
 
                 return false;
             }
+        }
 
+        function updatePasswordStrength(reset = false) {
+            var pw = reset ? "" : document.getElementById("pswd1").value;
+            var strengthBar = document.getElementById("strength-bar");
+            var strengthText = document.getElementById("strength-text");
+
+            if (reset || pw.length === 0) {
+                strengthBar.style.width = "0%";
+                strengthBar.style.backgroundColor = "#ddd";
+                strengthText.innerText = "";
+                return;
+            }
+
+            var strength = 0;
+            var lengthScore = pw.length >= 10 ? 2 : pw.length >= 5 ? 1 : 0;
+            var hasUpper = /[A-Z]/.test(pw) ? 1 : 0;
+            var hasLower = /[a-z]/.test(pw) ? 1 : 0;
+            var hasNumber = /[0-9]/.test(pw) ? 1 : 0;
+            var hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(pw) ? 1 : 0;
+
+            strength = lengthScore + hasUpper + hasLower + hasNumber + hasSpecial;
+
+            var width, color, text;
+            if (strength <= 2) {
+                width = 25;
+                color = "red";
+                text = "Weak";
+            } else if (strength <= 4) {
+                width = 50;
+                color = "orange";
+                text = "Fair";
+            } else if (strength <= 5) {
+                width = 75;
+                color = "yellowgreen";
+                text = "Good";
+            } else {
+                width = 100;
+                color = "green";
+                text = "Strong";
+            }
+
+            strengthBar.style.width = width + "%";
+            strengthBar.style.backgroundColor = color;
+            strengthText.innerText = text;
+        }
+
+        function resetForm() {
+            updatePasswordStrength(true);
         }
     </script>
 
-    <form onsubmit="return verifyPassword()">
+    <form onsubmit="return verifyPassword()" onreset="resetForm()">
         Enter password
-        <input type="password" id="pswd1" value=""><br><br>
-
+        <input type="password" id="pswd1" value="" oninput="updatePasswordStrength()"><br>
+        <div id="strength-meter">
+            <div id="strength-bar"></div>
+        </div>
+        <div id="strength-text"></div><br>
 
         Confirm password
         <input type="password" id="pswd2" value=""><br><br>
@@ -96,13 +166,6 @@
 
         <input type="submit" value="Submit">
         <button type="reset" value="Reset">Reset</button>
-
     </form>
-
 </body>
-
 </html>
-
-
-
-<!-- created by John Koshy -->
