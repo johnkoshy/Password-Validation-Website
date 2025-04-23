@@ -7,8 +7,25 @@
     <style>
         body {
             text-align: center;
-            background-color: #f0f0f0;
+            background-image: url('https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             font-family: Arial, sans-serif;
+            color: #333;
+        }
+        #password-tip {
+            color: blue;
+            font-style: italic;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        form {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for form */
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
         }
     </style>
 </head>
@@ -71,6 +88,8 @@
 
         Confirm password
         <input type="password" id="pswd2" value=""><br><br>
+
+        <p id="password-tip">Tip: Password must be at least 5 characters long.</p>
 
         <p id="message_failure" style="color:red"> </p>
         <p id="message_success" style="color:green"> </p>
