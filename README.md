@@ -1,5 +1,4 @@
-Password Validation
-A simple web application to validate and confirm user passwords, ensuring they meet a minimum length requirement and match each other.
+Password Validation: A simple web application to validate and confirm user passwords, ensuring they meet a minimum length requirement and match each other.
 Features
 
 Password Validation: Checks if passwords are at least 5 characters long and not empty.
@@ -15,13 +14,11 @@ Clone the Repository:
 git clone https://github.com/johnkoshy/Password-Validation-Website.git
 cd Password-Validation-Website
 
-
 Open the Webpage:
 
 Option 1: Live Server (Recommended):
 Install the "Live Server" extension in Visual Studio Code.
 Right-click index.html and select "Open with Live Server" to view at http://127.0.0.1:5500.
-
 
 Option 2: Direct Open:
 Open index.html in a browser:
@@ -29,14 +26,7 @@ macOS: open index.html
 Linux: xdg-open index.html
 Windows: start index.html
 
-
-
-
-
-
 Test the Form:
-
-
 
 Enter a password and confirmation password.
 Ensure both are at least 5 characters long and match.
@@ -54,32 +44,8 @@ Favicon: Replace favicon.ico with your own icon (16x16 or 32x32, .ico or .png) a
 
 Screenshots
 
-(Optional) Add a screenshot of the webpage to showcase the form. To include:
-
-
-
-
-
-Take a screenshot of the webpage (e.g., via browser or PrtSc).
-
-
-
-Save it as screenshot.png in the project folder.
-
-
-
-Add to the README:
-
 ![Password Validation Screenshot](screenshot.png)
-
-Future Improvements
-
-Add more password validation rules (e.g., uppercase, numbers, special characters).
-Enhance styling with CSS frameworks (e.g., Bootstrap).
-Include a password strength meter.
-Deploy to GitHub Pages or Netlify for public access.
 
 Credits
 
 Created by John Koshy.
-
