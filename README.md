@@ -26,7 +26,7 @@ A simple web application to validate and confirm user passwords, ensuring they m
 ## Screenshots
 | Password Validation Form |
 |--------------------------|
-| <img src="screenshots/screenshot.png" alt="Password Validation Screenshot" width="300"/> |
+| <img src="screenshot.png" alt="Password Validation Screenshot" width="300"/> |
 
 ## Requirements
 - Web browser (e.g., Chrome, Firefox, Edge)
